@@ -1,0 +1,4 @@
+include ':auto-compiler'
+include ':autoviewbind'
+include ':app'
+rootProject.name = "APT-Exercise"
