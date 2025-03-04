@@ -2,17 +2,18 @@ package me.tommy.jnisample
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_main.*
+import me.tommy.jnisample.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        // Example of a call to a native method
-        sample_text.text = stringFromJNI()
-        sample_text2.text = stringFromJNI2()
+        binding.sampleText.text = stringFromJNI()
+        binding.sampleText2.text = stringFromJNI2()
     }
 
     /**

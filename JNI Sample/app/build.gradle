@@ -1,9 +1,9 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 29
+    namespace "me.tommy.jnisample"
+    compileSdkVersion 30
 
     defaultConfig {
         applicationId "me.tommy.jnisample"
@@ -19,6 +19,9 @@ android {
             }
         }
     }
+    buildFeatures {
+        viewBinding true
+    }
 
     buildTypes {
         release {
@@ -32,6 +35,11 @@ android {
             version "3.10.2"
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
+    }
+
 }
 
 dependencies {
